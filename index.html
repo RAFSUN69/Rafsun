@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAFSUN6T9 - Official</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif}
+body{height:100vh;overflow:hidden;background:#000;color:#fff;display:flex;align-items:center;justify-content:center}
+#bg-video{position:fixed;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:-1}
+.overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.4);z-index:-1}
+.card{text-align:center;background:rgba(255,255,255,0.06);backdrop-filter:blur(25px);-webkit-backdrop-filter:blur(25px);padding:45px 35px;border-radius:30px;border:1px solid rgba(255,255,255,0.12);width:90%;max-width:400px;box-shadow:0 8px 32px rgba(0,0,0,0.3)}
+.avatar{width:110px;height:110px;border-radius:50%;object-fit:cover;margin-bottom:15px;border:1px solid rgba(255,255,255,0.3)}
+h1{font-size:30px;letter-spacing:3px;margin-bottom:5px;font-weight:900;color:#fff}
+.tagline{opacity:0.6;margin-bottom:35px;letter-spacing:3px;font-size:11px;text-transform:uppercase}
+.btn{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;padding:15px;margin:13px 0;border-radius:16px;background:linear-gradient(135deg, rgba(255,40,80,0.18), rgba(255,90,140,0.12));backdrop-filter:blur(15px);border:1px solid rgba(255,120,160,0.25);color:#fff;text-decoration:none;font-weight:600;transition:0.3s;box-shadow:inset 0 1px 0 rgba(255,255,255,0.15), 0 4px 20px rgba(255,50,100,0.15)}
+.btn i{font-size:20px;color:#ffb0c8}
+.btn:hover{background:linear-gradient(135deg, rgba(255,40,80,0.35), rgba(255,90,140,0.25));transform:translateY(-2px);box-shadow:0 8px 25px rgba(255,50,100,0.35)}
+.btn.discord{background:linear-gradient(135deg, rgba(255,60,120,0.18), rgba(200,80,255,0.12));border-color:rgba(255,100,200,0.25)}
+#soundBtn{position:fixed;bottom:25px;right:25px;background:rgba(255,255,255,0.08);backdrop-filter:blur(15px);border:1px solid rgba(255,255,255,0.15);padding:10px 20px;border-radius:50px;cursor:pointer;color:#fff;z-index:10}
+</style>
+</head>
+<body>
+
+<video autoplay muted loop playsinline id="bg-video" poster="avatar.png">
+  <source src="bg.mp4" type="video/mp4">
+</video>
+<div class="overlay"></div>
+
+<div class="card">
+  <img src="avatar.png" class="avatar" alt="RAFSUN6T9">
+  <h1>RAFSUN6T9</h1>
+  <div class="tagline">Contact Me</div>
+
+  <a class="btn" href="https://wa.me/8801317021116" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+  <a class="btn discord" href="https://discord.gg/z8Xye89Z8s" target="_blank"><i class="fab fa-discord"></i> Discord</a>
+  <a class="btn" href="https://t.me/RAFSUN6T9" target="_blank"><i class="fab fa-telegram"></i> Telegram</a>
+</div>
+
+<button id="soundBtn">🔇 Sound Off</button>
+
+<script>
+const video = document.getElementById('bg-video');
+const btn = document.getElementById('soundBtn');
+let isMuted = true;
+video.muted = true;
+video.play().catch(()=>{});
+btn.onclick = () => {
+  if(isMuted){
+    video.muted = false;
+    btn.innerText = "🔊 Sound On";
+    isMuted = false;
+  } else {
+    video.muted = true;
+    btn.innerText = "🔇 Sound Off";
+    isMuted = true;
+  }
+};
+</script>
+
+</body>
+</html>h1>
